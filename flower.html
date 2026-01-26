@@ -326,3 +326,12 @@
 
 <!-- Import Javascript -->
 <script src="js/main.js"></script>
+<script>
+  // Play music when page loads
+  window.addEventListener('load', function() {
+    const audio = document.getElementById('bgMusic');
+    audio.play().catch(function(error) {
+      console.log('Autoplay was prevented:', error);
+    });
+  });
+</script>
