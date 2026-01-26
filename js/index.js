@@ -51,7 +51,7 @@ for (let index = 0; index < fourthtext.length; index++) {
   }
 }
 
-// Play music when button is clicked
+// Set flag to indicate user clicked the Open button
 document.querySelector('.btn').addEventListener('click', function(event) {
-  document.getElementById('bgMusic').play();
+  sessionStorage.setItem('userClickedOpen', 'true');
 });
