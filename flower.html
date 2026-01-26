@@ -315,9 +315,14 @@
   </div>
   
   <!-- Audio -->
-  <audio id="bgMusic" autoplay loop>
+  <audio id="bgMusic" loop>
     <source src="audio/Belong to you - Josh Makazo.mp3" type="audio/mpeg">
   </audio>
+  
+  <!-- Fallback play button (shown if autoplay fails) -->
+  <button id="playButton" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 15px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 16px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.2)';">
+    🎵 Play Music
+  </button>
   <!-- Title -->
   <h1 class="title"><span id="title"></span></h1>
 </body>
@@ -327,11 +332,41 @@
 <!-- Import Javascript -->
 <script src="js/main.js"></script>
 <script>
-  // Play music when page loads
+  // Improved audio playback handling
   window.addEventListener('load', function() {
     const audio = document.getElementById('bgMusic');
-    audio.play().catch(function(error) {
-      console.log('Autoplay was prevented:', error);
+    const playButton = document.getElementById('playButton');
+    const userClickedOpen = sessionStorage.getItem('userClickedOpen');
+    
+    // Clear the flag after reading it
+    if (userClickedOpen) {
+      sessionStorage.removeItem('userClickedOpen');
+    }
+    
+    // Function to play audio
+    function playAudio() {
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(function() {
+          // Audio started playing successfully
+          console.log('Audio playback started successfully');
+          playButton.style.display = 'none';
+        }).catch(function(error) {
+          // Autoplay was prevented
+          console.log('Autoplay was prevented:', error);
+          // Show the play button as fallback
+          playButton.style.display = 'block';
+        });
+      }
+    }
+    
+    // Try to play audio (more likely to succeed if user clicked Open button)
+    playAudio();
+    
+    // Setup fallback play button
+    playButton.addEventListener('click', function() {
+      playAudio();
     });
   });
 </script>
