@@ -1,5 +1,6 @@
 const title = document.querySelector('.title')
-const text = `Hi, My Cinnabon <3 \n I couldn't get roses, but these flowers might make it up to you`.split('')
+const text = "Hi, My Cinnabon <3".split('')
+const sectext =  "I couldn't get roses, but these flowers might make it up to you".split('')
 
 // Create container for better responsive layout
 title.style.display = 'flex'
@@ -9,6 +10,11 @@ title.style.gap = '0.5rem'
 
 for (let index = 0; index < text.length; index++) {
   if (text[index] !== ' ') {
+    title.innerHTML += `<span>${text[index]}</span>`
+  } else {
+    title.innerHTML += `<span style='width: 1rem'></span>`
+  }
+  if (sectext[index] !== ' ') {
     title.innerHTML += `<span>${text[index]}</span>`
   } else {
     title.innerHTML += `<span style='width: 1rem'></span>`
