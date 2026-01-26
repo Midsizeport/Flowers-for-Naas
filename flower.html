@@ -361,15 +361,8 @@
       }
     }
     
-    // If user clicked the Open button, try to play audio immediately
-    // (this is more likely to succeed because it's tied to user interaction)
-    if (userClickedOpen === 'true') {
-      playAudio();
-    } else {
-      // If user navigated directly to this page, still try autoplay
-      // but it's more likely to be blocked
-      playAudio();
-    }
+    // Try to play audio (more likely to succeed if user clicked Open button)
+    playAudio();
     
     // Setup fallback play button
     playButton.addEventListener('click', function() {
