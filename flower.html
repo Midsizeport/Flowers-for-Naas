@@ -452,6 +452,13 @@
   <audio id="bgMusic" autoplay loop>
     <source src="audio/Belong to you - Josh Makazo.mp3" type="audio/mpeg">
   </audio>
+  
+  <!-- Music Player -->
+  <div class="music-player">
+    <div class="music-player__display" id="songDisplay">Belong to you - Josh Makazo</div>
+    <button class="music-player__button" id="nextSongBtn">Next Song</button>
+  </div>
+  
   <!-- Title -->
   <h1 class="title"><span id="title"></span></h1>
 </body>
@@ -460,12 +467,3 @@
 
 <!-- Import Javascript -->
 <script src="js/main.js"></script>
-<script>
-  // Play music when page loads
-  window.addEventListener('load', function() {
-    const audio = document.getElementById('bgMusic');
-    audio.play().catch(function(error) {
-      console.log('Autoplay was prevented:', error);
-    });
-  });
-</script>
