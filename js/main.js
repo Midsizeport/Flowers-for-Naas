@@ -84,3 +84,58 @@ window.addEventListener('load', function() {
     console.log('Autoplay was prevented:', error);
   });
 });
+
+// Polaroid Image Carousel Functionality
+const images = [
+  'Pictures/1.jpeg',
+  'Pictures/2.jpeg',
+  'Pictures/3.png',
+  'Pictures/4.jpeg'
+];
+
+let currentImageIndex = 0;
+let carouselAutoplayInterval;
+
+const polaroidImage = document.getElementById('polaroidImage');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function updateImage(index) {
+  polaroidImage.style.opacity = '0';
+  
+  setTimeout(() => {
+    polaroidImage.src = images[index];
+    polaroidImage.style.opacity = '1';
+  }, 250);
+  
+  currentImageIndex = index;
+  resetAutoplay();
+}
+
+function showNextImage() {
+  const nextIndex = (currentImageIndex + 1) % images.length;
+  updateImage(nextIndex);
+}
+
+function showPrevImage() {
+  const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateImage(prevIndex);
+}
+
+function resetAutoplay() {
+  clearInterval(carouselAutoplayInterval);
+  startAutoplay();
+}
+
+function startAutoplay() {
+  carouselAutoplayInterval = setInterval(showNextImage, 10000); // Change every 10 seconds
+}
+
+// Event listeners for buttons
+prevBtn.addEventListener('click', showPrevImage);
+nextBtn.addEventListener('click', showNextImage);
+
+// Start autoplay when page loads
+window.addEventListener('load', function() {
+  startAutoplay();
+});
