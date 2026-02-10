@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/valentine.css">
+  <title>Be My Valentine</title>
+</head>
+
+<body>
+  <main class="valentine-wrap">
+    <p class="subline">I have a very important question for you.</p>
+    <h1>Will you be my valentine, Naasiah?</h1>
+
+    <div class="button-zone">
+      <button class="choice-btn yes-btn" id="yesBtn">Yes</button>
+      <button class="choice-btn no-btn" id="noBtn">No</button>
+    </div>
+  </main>
+
+  <div class="modal hidden" id="noModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalMessage">
+      <p id="modalMessage"></p>
+      <button class="modal-btn" id="modalOkBtn">Okay My Love, I'll say yes this time</button>
+    </div>
+  </div>
+
+  <audio id="valentineAudio" src="audio/Dandelions - Ruth B.mp3" loop></audio>
+
+  <script src="js/valentine.js"></script>
+</body>
+
+</html>

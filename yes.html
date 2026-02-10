@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/yes.css">
+  <title>My Valentine</title>
+</head>
+
+<body>
+  <main class="yes-wrap">
+    <h1>Awww, my Angel &lt;3</h1>
+    <p>I officially Love you the most, my Valentine</p>
+    <video id="loveVideo" src="Video/us.mp4" autoplay loop playsinline controls></video>
+    
+    <!-- Secret Button (appears after all polaroids are flipped) -->
+    <button id="secretButton" class="secret-button hidden">Hey baby, you found it &lt;3 Click me</button>
+  </main>
+
+  <div class="polaroid-wall" aria-hidden="true">
+    <figure class="polaroid polaroid--one" data-flipped="false">
+      <div class="polaroid-inner">
+        <div class="polaroid-front">
+          <img src="Pictures/1.jpeg" alt="">
+          <figcaption>Us 💕</figcaption>
+        </div>
+        <div class="polaroid-back">
+          <p>Honestly, I never expected someone as perfect as you to ever appear in my life. Every day spent with you has been so special and I treasure every single second of it. I only wish time didn't pass as fast as it does. One day, we won't have to worry about the time, my Love💕</p>
+        </div>
+      </div>
+    </figure>
+    <figure class="polaroid polaroid--two" data-flipped="false">
+      <div class="polaroid-inner">
+        <div class="polaroid-front">
+          <img src="Pictures/2.jpeg" alt="">
+          <figcaption>My love ♡</figcaption>
+        </div>
+        <div class="polaroid-back">
+          <p>To think this was the day security gave us a standing ovation and we had some random kids singing to us. I remember this walk through the park so well, and all the small moments we had here. You really are something special Naasiah♡</p>
+        </div>
+      </div>
+    </figure>
+    <figure class="polaroid polaroid--three" data-flipped="false">
+      <div class="polaroid-inner">
+        <div class="polaroid-front">
+          <img src="Pictures/3.png" alt="">
+          <figcaption>A lil Fashion show ✨</figcaption>
+        </div>
+        <div class="polaroid-back">
+          <p>I mean, as a nerd, I've played so many different games, but I never thought I'd ever enjoying playing one as much as I did this night. Your presence is really just an improvement to everything I do, and I am so damn lucky to have you in my life and by my side</p>
+        </div>
+      </div>
+    </figure>
+    <figure class="polaroid polaroid--four" data-flipped="false">
+      <div class="polaroid-inner">
+        <div class="polaroid-front">
+          <img src="Pictures/4.jpeg" alt="">
+          <figcaption>Our First Date 💕</figcaption>
+        </div>
+        <div class="polaroid-back">
+          <p>I guess this was the day everything changed. This was both the scariest and best thing I've ever done, I really couldn't imagine the rest of my life without you💕</p>
+        </div>
+      </div>
+    </figure>
+    <figure class="polaroid polaroid--five" data-flipped="false">
+      <div class="polaroid-inner">
+        <div class="polaroid-front">
+          <img src="Pictures/5.jpeg" alt="">
+          <figcaption>Always You, Forever🌹</figcaption>
+        </div>
+        <div class="polaroid-back">
+          <p>The first time we said I Love You to each other. My heart was racing even though everything around us was so calm, you just have something about you that makes every moment feel both exhilarating and peaceful. I would choose you in every universe, my Naasiah🌹 I Love you, forever and always</p>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="heart-layer" id="balloonLayer"></div>
+
+  <!-- Password Popup -->
+  <div id="passwordPopup" class="password-popup hidden">
+    <div class="password-popup-content">
+      <h2>Enter password:</h2>
+      <p class="hint">(hint: my favourite feature of yours)</p>
+      <input type="text" id="passwordInput" placeholder="Enter password...">
+      <button id="submitPassword">Submit</button>
+      <p id="passwordError" class="error-message hidden">Incorrect password. Try again!</p>
+    </div>
+  </div>
+
+  <!-- Scroll Poem -->
+  <div id="scrollPoem" class="scroll-container hidden">
+    <div class="scroll-overlay" id="scrollOverlay"></div>
+    <div class="scroll">
+      <button class="close-poem" id="closePoem">✕</button>
+      <div class="scroll-paper">
+        <div class="poem">
+          <p>I stared into the abyss</p>
+          <p>a window to your soul,</p>
+          <p>a story untold.</p>
+          <p>Like a black hole,</p>
+          <p>It drew me inward</p>
+          <p>and unveiled your hidden beauty.</p>
+          <br>
+          <p>Around it, a forest of oak,</p>
+          <p>majestic, stripped bare,</p>
+          <p>a place of peace</p>
+          <p>where I lose myself</p>
+          <p>and wish to linger,</p>
+          <p>If only you didn't turn away.</p>
+          <br>
+          <p>Beyond the forest, an ocean of white,</p>
+          <p>vast, unbroken,</p>
+          <p>guiding all attention</p>
+          <p>to your celestial eyes.</p>
+          <br>
+          <p>All this wonder</p>
+          <p>rests within your almond gaze,</p>
+          <p>a sanctuary of calm.</p>
+          <p>Though you remain blind</p>
+          <p>to its perfection.</p>
+          <br>
+          <p>It's time you opened your eyes, my love,</p>
+          <p>and see the truth</p>
+          <p>reflected in mine.</p>
+          <br>
+          <p class="poem-footer">I promised you a poem baby, I hope you liked it🌹</p>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="yesAudio" src="audio/us.mp3" loop></audio>
+
+  <script src="js/yes.js"></script>
+</body>
+
+</html>
