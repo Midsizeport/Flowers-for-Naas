@@ -91,7 +91,7 @@ const images = [
   'Pictures/2.jpeg',
   'Pictures/3.png',
   'Pictures/4.jpeg',
-  'Pictures/5.jpeg'
+  'Pictures/5.jpeg',
 ];
 
 let currentImageIndex = 0;
